@@ -1,0 +1,1932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+        {% load static %}
+    <link rel="stylesheet"  href="{% static 'css/branch.css' %}"  >
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div id="heading_container">
+        <h1><span>Computer Science and Engineering</span></h1>
+    </div>
+
+    
+    <div class="container">
+        <form action="{% url 'savedata' %}" method="POST">
+        
+            {% csrf_token %}
+            <div id="intro_container">
+
+
+                <table style="width:100%">
+                    <h2>{{n}}</h2>
+                    
+                    <tr>
+                        <td><label for="name">Name:</label></td>
+                        <td><input type="text" id="name" name="name"></td>
+                        <td><label for="Registration Number">Registration Number:</label></td>
+                        <td><input type="text" id="Reg_No" name="regno"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="year">Year of Joining:</label></td>
+                        <td><input type="date" id="jyear" name="joinyear"><br></td>
+                        <td><label for="year">Year of passing:</label></td>
+                        <td><input type="date" id="year" name="passyear"><br></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Mobile Number">Phone :</label></td>
+                        <td><input type="number" id="Mobile_num" name="mbno"><br></td>
+                        <td><label for="email">Email:</label></td>
+                        <td><input type="text" id="email" name="email"><br></td>
+                    </tr>
+                    <tr>
+                        <td><label for="address">Home Address :</label></td>
+                        <td><input type="text" id="address" name="add"><br></td>
+                        <td><label for="Ntransscript">No.of Transcript  :</label></td>
+                        <td><input type="number" id="no_of_transcript" name="not"></td>
+
+                        <td>
+                            <button type="submit" name="submit">Submit</button>
+                        </td>
+
+
+                        <h1>{{o}}</h1>
+
+
+                    </tr>
+                </table>
+            </div>
+
+
+
+
+
+        </form>
+
+        
+        <form action="{% url 'savedata2' %}" method="post">
+            {% csrf_token %}
+
+           
+        <label for="1">Enter marks for sem1</label>
+        <input type="number" name="first_sem" id="">
+        
+
+        <label for="2">Enter marks for sem2</label>
+        <input type="number" name="second_sem" id="">
+        <label for="3">Enter marks for sem3</label>
+        <input type="number" name="third_sem" id="">
+        <label for="4">Enter marks for sem4</label>
+        <input type="number" name="fourth_sem" id="">
+        <label for="5">Enter marks for sem5</label>
+        <input type="number" name="fifth_sem" id="">
+        <label for="6">Enter marks for sem6</label>
+        <input type="number" name="sixth_sem" id="">
+        <label for="7">Enter marks for sem7</label>
+        <input type="number" name="seventh_sem" id="">
+        <label for="8">Enter marks for sem8</label>
+        <input type="number" name="eight_sem" id="">
+
+
+        <button type="submit" name="submit">Submit</button>
+
+        
+        </form>
+    </div>
+
+            {% comment %} <div class="card mt-3 flex-row">
+                
+                <div class="nav flex-column col-3 nav-pills me-3 bg-primary-subtle" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <button class="nav-link active" id="v-pills-sem1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-sem1" type="button" role="tab" aria-controls="v-pills-sem1" aria-selected="true">Semester 1</button>
+                    <button class="nav-link" id="v-pills-sem2-tab" data-bs-toggle="pill" data-bs-target="#v-pills-sem2" type="button" role="tab" aria-controls="v-pills-sem2" aria-selected="false">Semester 2</button>
+                    <button class="nav-link" id="v-pills-sem3-tab" data-bs-toggle="pill" data-bs-target="#v-pills-sem3" type="button" role="tab" aria-controls="v-pills-sem3" aria-selected="false">Semester 3</button>
+                    <button class="nav-link" id="v-pills-sem4-tab" data-bs-toggle="pill" data-bs-target="#v-pills-sem4" type="button" role="tab" aria-controls="v-pills-sem4" aria-selected="false">Semester 4</button>
+                    <button class="nav-link" id="v-pills-sem5-tab" data-bs-toggle="pill" data-bs-target="#v-pills-sem5" type="button" role="tab" aria-controls="v-pills-sem5" aria-selected="false">Semester 5</button>
+                    <button class="nav-link" id="v-pills-sem6-tab" data-bs-toggle="pill" data-bs-target="#v-pills-sem6" type="button" role="tab" aria-controls="v-pills-sem6" aria-selected="false">Semester 6</button>
+                    <button class="nav-link" id="v-pills-sem7-tab" data-bs-toggle="pill" data-bs-target="#v-pills-sem7" type="button" role="tab" aria-controls="v-pills-sem7" aria-selected="false">Semester 7</button>
+                    <button class="nav-link" id="v-pills-sem8-tab" data-bs-toggle="pill" data-bs-target="#v-pills-sem8" type="button" role="tab" aria-controls="v-pills-sem8" aria-selected="false">Semester 8</button>
+                  </div>
+                <div id="v-pills-tabContent" class="tab-content col-9">
+                    <div class="tab-pane fade show active" id="v-pills-sem1" role="tabpanel" aria-labelledby="v-pills-sem1-tab" tabindex="0">
+                        <table style="width:100%">
+                            <tr>
+                                <td>BSC101</td>
+                                <td>Physics</td>
+                                <td>
+                                    <label>
+                                        <select id="phyth" name="phyth" >
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <select id="phypr" name="phypr" >
+                                            <option value="" disabled selected>Practical</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>BSC103</td>
+                                <td>Mathematic-1</td>
+                                <td>
+                                    <label>
+                                        <select id="m1th" name="m1th" >
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>ESC105</td>
+                                <td>Basic Electrical Engineering</td>
+                                <td>
+                                    <label>
+                                        <select id="beeth" name="beeth" >
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <select id="beepr" name="beepr" >
+                                            <option value="" disabled selected>Practical</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>ESC106</td>
+                                <td>Engineering Graphics</td>
+                                <td>
+                                    <label>
+                                        <select id="egth" name="egth" >
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <select id="egpr" name="egpr" >
+                                            <option value="" disabled selected>Practical</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>ESC109</td>
+                                <td>Engineering Mechanics</td>
+                                <td>
+                                    <label>
+                                        <select id="emth" name="emth" >
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>LAB112</td>
+                                <td>Engineering Exploration</td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    <label>
+                                        <select id="eepr" name="eepr" >
+                                            <option value="" disabled selected>Practical</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>SGPA</td>
+                                <td><input type="number" id="scsesem1" name="scsesem1" placeholder="SGPA" ></td>
+                                <td>CGPA</td>
+                                <td><input type="number" id="ccsesem1" name="ccsesem1" placeholder="SGPA" ></td>
+                            </tr>
+
+                            <tr>
+                                <td>Upload Gradecard</td>
+                                <td>
+                                    <input type="file" id="gc1" name="gc1" accept=".pdf">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="tab-pane fade" id="v-pills-sem2" role="tabpanel" aria-labelledby="v-pills-sem2-tab" tabindex="0">
+                        <table>
+                            <tr>
+                                <td>BSC102</td>
+                                <td>Chemistry</td>
+                                <td>
+                                    <label>
+                                        <select id="cheth" name="cheth" >
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <select id="chepr" name="chepr" >
+                                            <option value="" disabled selected>Practical</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>BSC104</td>
+                                <td>Mathematic-2</td>
+                                <td>
+                                    <label>
+                                        <select id="m2th" name="m2th" >
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>ESC107</td>
+                                <td>Programming for Problem Solving</td>
+                                <td>
+                                    <label>
+                                        <select id="ppsth" name="ppsth" >
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <select id="ppspr" name="ppspr" >
+                                            <option value="" disabled selected>Practical</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>ESC108</td>
+                                <td>Workshop / Manufacturing Practices</td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    <label>
+                                        <select id="wmppr" name="wmppr" >
+                                            <option value="" disabled selected>Practical</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>HMC110</td>
+                                <td>Professional Communication</td>
+                                <td>
+                                    <label>
+                                        <select id="pcth" name="pcth" >
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <select id="pcpr" name="pcpr" >
+                                            <option value="" disabled selected>Practical</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>MAC111</td>
+                                <td>Environmental Science</td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    <label>
+                                        <select id="espr" name="espr" >
+                                            <option value="" disabled selected>Practical</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>SGPA</td>
+                                <td><input type="number" id="scsesem2" name="scsesem2" placeholder="SGPA" ></td>
+                                <td>CGPA</td>
+                                <td><input type="number" id="ccsesem2" name="ccsesem2" placeholder="SGPA" ></td>
+                            </tr>
+
+                            <tr>
+                                <td>Upload Gradecard</td>
+                                <td>
+                                    <input type="file" id="gc2" name="gc2" accept=".pdf">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="tab-pane fade" id="v-pills-sem3" role="tabpanel" aria-labelledby="v-pills-sem3-tab" tabindex="0">
+                        <table>
+                            <tr>
+                                <td>BSC273</td>
+                                <td>Mathematics-III: Applied Linear Algebra</td>
+                                <td>
+                                    <label>
+                                        <select id="m3th" name="m3th" >
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td> 
+                            </tr>
+
+                            <tr>
+                                <td>ESC282</td>
+                                <td>Digital Electronics</td>
+                                <td>
+                                    <label>
+                                        <select id="deth" name="deth" >
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <select id="depr" name="depr" >
+                                            <option value="" disabled selected>Practical</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>HMC278</td>
+                                <td>Human Values and Social Ethics</td>
+                                <td>
+                                    <label>
+                                        <select id="hvpeth" name="hvpeth" >
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>PCC-CS201 </td>
+                                <td>Discrete Mathematics</td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    <label>
+                                        <select id="dmth" name="dmth" >
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>PCC-CS202</td>
+                                <td> Data Structures</td>
+                                <td>
+                                    <label>
+                                        <select id="dsth" name="dsth" >
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <select id="dspr" name="dspr" >
+                                            <option value="" disabled selected>Practical</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>PCC-CS203</td>
+                                <td>Object Oriented Programming with Java</td>
+                                <td>
+                                    <label>
+                                        <select id="jth" name="jth" >
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <select id="jpr" name="jpr" >
+                                            <option value="" disabled selected>Practical</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>PCC-CS204 </td>
+                                <td> Numerical and Scientific Computing</td>
+                                <td>
+                                    <label>
+                                        <select id="nscth" name="nscth" >
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <select id="nscpr" name="nscpr" >
+                                            <option value="" disabled selected>Practical</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>SGPA</td>
+                                <td><input type="number" id="scsesem3" name="scsesem3" placeholder="SGPA" ></td>
+                                <td>CGPA</td>
+                                <td><input type="number" id="ccsesem3" name="ccsesem3" placeholder="SGPA" ></td>
+                            </tr>
+
+                            <tr>
+                                <td>Upload Gradecard</td>
+                                <td>
+                                    <input type="file" id="gc3" name="gc3" accept=".pdf">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="tab-pane fade" id="v-pills-sem4" role="tabpanel" aria-labelledby="v-pills-sem4-tab" tabindex="0">
+                        <table>
+                            <tr>
+                                <td>BSC276</td>
+                                <td>Mathematics-IV: Vector Calculus, Statistical Methods</td>
+                                <td>
+                                    <label>
+                                        <select id="m4th" name="m4th" >
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td> 
+                            </tr>
+
+                            <tr>
+                                <td>MAC277</td>
+                                <td>Indian Constitution</td>
+                                <td>
+                                    <label>
+                                        <select id="icth" name="icth" >
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>PCC-CS205 </td>
+                                <td>Microprocessors and Interfacing</td>
+                                <td>
+                                    <label>
+                                        <select id="mith" name="mith" >
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <select id="mipr" name="mipr" >
+                                            <option value="" disabled selected>Practical</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>PCC-CS206</td>
+                                <td>Computer Organization and Architecture</td>
+                                <td>
+                                    <label>
+                                        <select id="coath" name="coath" >
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>PCC-CS207</td>
+                                <td>Design and Analysis of Algorithms</td>
+                                <td>
+                                    <label>
+                                        <select id="daath" name="daath" >
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <select id="daapr" name="daapr" >
+                                            <option value="" disabled selected>Practical</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>PCC-CS208</td>
+                                <td>Python programming</td>
+                                <td>
+                                    <label>
+                                        <select id="ppth" name="ppth" >
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <select id="pppr" name="pppr" >
+                                            <option value="" disabled selected>Practical</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>SGPA</td>
+                                <td><input type="number" id="scsesem4" name="scsesem4" placeholder="SGPA" ></td>
+                                <td>CGPA</td>
+                                <td><input type="number" id="ccsesem4" name="ccsesem4" placeholder="SGPA" ></td>
+                            </tr>
+
+                            <tr>
+                                <td>Upload Gradecard</td>
+                                <td>
+                                    <input type="file" id="gc4" name="gc4" accept=".pdf">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="tab-pane fade" id="v-pills-sem5" role="tabpanel" aria-labelledby="v-pills-sem5-tab" tabindex="0">
+                        <table>
+                            <tr>
+                                <td>MAC371</td>
+                                <td>Employabiliy Skills-1</td>
+                                <td>
+                                    <label>
+                                        <select id="es1th" name="es1th" >
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td> 
+                            </tr>
+
+                            <tr>
+                                <td>PCC-CS301</td>
+                                <td>Software Engineering</td>
+                                <td>
+                                    <label>
+                                        <select id="seth" name="seth" >
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <select id="sepr" name="sepr" >
+                                            <option value="" disabled selected>Practical</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>PCC-CS302</td>
+                                <td>Database Management Systems </td>
+                                <td>
+                                    <label>
+                                        <select id="dbmsth" name="dbmsth" >
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <select id="dbmspr" name="dbmspr" >
+                                            <option value="" disabled selected>Practical</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>PCC-CS303</td>
+                                <td>Formal Language & Automata Theory</td>
+                                <td>
+                                    <label>
+                                        <select id="flatth" name="flatth" >
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>PCC-CS304</td>
+                                <td> Operating Systems</td>
+                                <td>
+                                    <label>
+                                        <select id="osth" name="osth" >
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <select id="ospr" name="ospr" >
+                                            <option value="" disabled selected>Practical</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>PEC-CS309 </td>
+                                <td>Technical Seminar</td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    <label>
+                                        <select id="tspr" name="tspr" >
+                                            <option value="" disabled selected>Practical</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>PEC-CS305</td>
+                                <td>Elective-1 : Advanced Java Programming</td>
+                                <td>
+                                    <label>
+                                        <select id="ajth" name="ajth">
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <select id="ajpr" name="ajpr">
+                                            <option value="" disabled selected>Practical</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>PEC-CS307</td>
+                                <td>Elective-1 : Introduction to Machine Learning</td>
+                                <td>
+                                    <label>
+                                        <select id="mlth" name="mlth">
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <select id="mlpr" name="mlpr">
+                                            <option value="" disabled selected>Practical</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>SGPA</td>
+                                <td><input type="number" id="scsesem5" name="scsesem5" placeholder="SGPA" ></td>
+                                <td>CGPA</td>
+                                <td><input type="number" id="ccsesem5" name="ccsesem5" placeholder="SGPA" ></td>
+                            </tr>
+
+                            <tr>
+                                <td>Upload Gradecard</td>
+                                <td>
+                                    <input type="file" id="gc5" name="gc5" accept=".pdf">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="tab-pane fade" id="v-pills-sem6" role="tabpanel" aria-labelledby="v-pills-sem6-tab" tabindex="0">
+                        <table>
+                            <tr>
+                                <td>MAC372</td>
+                                <td>Employabiliy Skills-2</td>
+                                <td>
+                                    <label>
+                                        <select id="es2th" name="es2th" >
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td> 
+                            </tr>
+
+                            <tr>
+                                <td>PCC-CS310</td>
+                                <td>Compiler Design</td>
+                                <td>
+                                    <label>
+                                        <select id="cdth" name="cdth" >
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <select id="cdpr" name="cdpr" >
+                                            <option value="" disabled selected>Practical</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>PCC-CS311</td>
+                                <td>Data Communication & Networking</td>
+                                <td>
+                                    <label>
+                                        <select id="dcnth" name="dcnth" >
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <select id="dcnpr" name="dcnpr" >
+                                            <option value="" disabled selected>Practical</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>PCC-CS312</td>
+                                <td>Unix System Programming </td>
+                                <td>
+                                    <label>
+                                        <select id="uspth" name="uspth" >
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <select id="usppr" name="usppr" >
+                                            <option value="" disabled selected>Practical</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>PCC-CS313</td>
+                                <td>Advanced Algorithms</td>
+                                <td>
+                                    <label>
+                                        <select id="aath" name="aath" >
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <select id="aapr" name="aapr" >
+                                            <option value="" disabled selected>Practical</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>PEC-CS314</td>
+                                <td>Elective-2 : Cyber Security</td>
+                                <td>
+                                    <label>
+                                        <select id="csth" name="csth">
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <select id="cspr" name="cspr">
+                                            <option value="" disabled selected>Practical</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>PEC-CS316</td>
+                                <td>Elective-2 : Fundamentals of Artificial Neural Networks</td>
+                                <td>
+                                    <label>
+                                        <select id="annth" name="annth">
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <select id="annpr" name="annpr">
+                                            <option value="" disabled selected>Practical</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>SGPA</td>
+                                <td><input type="number" id="scsesem6" name="scsesem6" placeholder="SGPA" ></td>
+                                <td>CGPA</td>
+                                <td><input type="number" id="ccsesem6" name="ccsesem6" placeholder="SGPA" ></td>
+                            </tr>
+
+                            <tr>
+                                <td>Upload Gradecard</td>
+                                <td>
+                                    <input type="file" id="gc6" name="gc6" accept=".pdf">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="tab-pane fade" id="v-pills-sem7" role="tabpanel" aria-labelledby="v-pills-sem7-tab" tabindex="0">
+                        <table>
+                            <tr>
+                                <td>CS422</td>
+                                <td>Advanced Database Management Systems </td>
+                                <td>
+                                    <label>
+                                        <select id="adbmsth" name="adbmsth" >
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <select id="adbmspr" name="adbmspr" >
+                                            <option value="" disabled selected>Practical</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td> 
+                            </tr>
+
+                            <tr>
+                                <td>CS423</td>
+                                <td>TCP/IP Networking</td>
+                                <td>
+                                    <label>
+                                        <select id="tcpipth" name="tcpipth" >
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <select id="tcpippr" name="tcpippr" >
+                                            <option value="" disabled selected>Practical</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>CS424</td>
+                                <td>Cryptography and Network Security</td>
+                                <td>
+                                    <label>
+                                        <select id="cnsth" name="cnsth" >
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <select id="cnspr" name="cnspr" >
+                                            <option value="" disabled selected>Practical</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>CS431</td>
+                                <td>Distributed Computing</td>
+                                <td>
+                                    <label>
+                                        <select id="dcth" name="dcth" >
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <select id="dcpr" name="dcpr" >
+                                            <option value="" disabled selected>Practical</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>CS440G</td>
+                                <td>Elective-3 : Information Security</td>
+                                <td>
+                                    <label>
+                                        <select id="isth" name="isth">
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <select id="ispr" name="ispr">
+                                            <option value="" disabled selected>Practical</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>CS441D</td>
+                                <td>Elective-4 : Big Data Analytics</td>
+                                <td>
+                                    <label>
+                                        <select id="bdath" name="bdath">
+                                            <option value="" disabled selected>Theory</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <select id="bdapr" name="bdapr">
+                                            <option value="" disabled selected>Practical</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>SGPA</td>
+                                <td><input type="number" id="scsesem7" name="scsesem7" placeholder="SGPA" ></td>
+                                <td>CGPA</td>
+                                <td><input type="number" id="ccsesem7" name="ccsesem7" placeholder="SGPA" ></td>
+                            </tr>
+
+                            <tr>
+                                <td>Upload Gradecard</td>
+                                <td>
+                                    <input type="file" id="gc7" name="gc7" accept=".pdf">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="tab-pane fade" id="v-pills-sem8" role="tabpanel" aria-labelledby="v-pills-sem8-tab" tabindex="0">
+                        <table>
+                            <tr>
+                                <td>CS442</td>
+                                <td>Industrial Training / Internship</td>
+                                <td>
+                                    <label>
+                                        <select id="internpr" name="internpr" >
+                                            <option value="" disabled selected>Practical</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>CS443</td>
+                                <td>Project</td>
+                                <td>
+                                    <label>
+                                        <select id="propr" name="propr" >
+                                            <option value="" disabled selected>Practical</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A">A</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B">B</option>
+                                            <option value="C+">C+</option>
+                                            <option value="C">C</option>
+                                            <option value="D+">D+</option>
+                                            <option value="D">D</option>
+                                            <option value="E+">E+</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>SGPA</td>
+                                <td><input type="number" id="scsesem8" name="scsesem8" placeholder="SGPA" ></td>
+                                <td>CGPA</td>
+                                <td><input type="number" id="ccsesem8" name="ccsesem8" placeholder="SGPA" ></td>
+                            </tr>
+
+                            <tr>
+                                <td>Upload Gradecard</td>
+                                <td>
+                                    <input type="file" id="gc8" name="gc8" accept=".pdf">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div> 
+             {% endcomment %}
+
+
+        {% comment %} </form>
+    </div>
+    <script>
+        function semChange(e){
+            e.preventDefault();
+            document.querySelector(e.currentTarget.hash);
+        }
+    </script>
+</body>
+</html> {% endcomment %}

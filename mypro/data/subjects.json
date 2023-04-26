@@ -1,0 +1,7 @@
+{
+    "Semester 1": ["Mathematics", "Physics", "Chemistry"],
+    "Semester 2": ["English", "History", "Geography"],
+    "Semester 3": ["Computer Science", "Data Structures", "Algorithms"],
+    "Semester 4": ["Operating Systems", "Database Systems", "Software Engineering"]
+  }
+  

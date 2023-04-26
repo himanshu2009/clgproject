@@ -1,0 +1,15 @@
+{% extends 'enroll/base.html' %}
+
+
+{% block title %}Sudent subject{% endblock title %}
+
+{% block content %}
+
+{% for s in semester  %}
+{{s.subname}}
+{{s.credit}}
+
+{% endfor %}
+
+
+{% endblock content %}

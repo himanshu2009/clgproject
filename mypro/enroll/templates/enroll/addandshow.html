@@ -1,0 +1,83 @@
+{% extends 'enroll/base.html' %}
+
+{% block content %}
+<h4>Add new Subject</h4>
+
+<div class="container">
+<form action="" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    {% comment %} <label for="subname">Enter a subname</label>
+    <input type="text" name="subname" id="">
+    <label for="">Enter a subcode</label>
+    <input type="text" name="subcode" id="">
+
+    <label for="credit">Enter a no of credits for this subject</label>
+    <input type="number" name="credit" id=""> {% endcomment %}
+
+   
+
+    <input type="submit" value="Add" name="submit">
+</form>
+
+
+
+<h1>Show Subject Information</h1>
+
+{% if stu %}
+<h4>Table data</h4>
+
+
+
+
+<table class="table table-hover">
+    <thead >
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Subname</th>
+        <th scope="col">Subcode</th>
+        <th scope="col">Credit</th>
+        <th scope="col">semesterNo</th>
+        <th scope="col">departmentName</th>
+        <th scope="col">Action</th>
+
+      </tr>
+    </thead>
+    <tbody>
+        {% for stud in stu  %}
+        <tr>
+        <th scope="row">{{stud.id}}</th>
+        <td>{{stud.subname}}</td>
+        <td>{{stud.subcode}}</td>
+        <td>{{stud.credit}}</td>
+        <td>{{stud.semesterNo}}</td>
+        <td>{{stud.departmentName}}</td>
+        <td>
+             <a href="{% url 'updatedata' stud.id %}" class="btn btn-warning ">Edit</a> 
+             {% comment %} url banega {% endcomment %}
+            <form action="{% url 'deletedata' stud.id %}" method="post" class="d-inline"> 
+                {% csrf_token %}
+                <input type="submit" value="Delete" class="btn btn-danger ">
+            </form> 
+
+
+
+        </td>
+      </tr>
+      {% endfor %}
+      
+        
+     
+    </tbody>
+  </table>
+
+
+
+{% else %}
+<h2>no records</h2>
+
+
+{% endif %}
+</div>
+
+{% endblock content %}

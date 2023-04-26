@@ -1,0 +1,35 @@
+{% extends 'enroll/base.html' %}
+{% block title %}Document{% endblock %}
+{% block content %}
+    <h1>This is Practice </h1>
+    <h1>Records for department {{ departmentName }}</h1>
+    <ul>
+      {% for record in subject %}
+        <li>{{ record.id }}</li>
+        <li>{{ record.subname }}</li>
+        <li>{{ record.subcode }}</li>
+        <li>{{ record.credit }}</li>
+        <a href=" {% url 'picksem' record.semesterNo  %}">semsterNo</a>
+      {% empty %}
+        <li>No records found</li>
+      
+    </ul>
+    {% endfor %}
+
+
+    <h3>fill your subject marks according to your semester</h3>
+    {% comment %} <a href="{% url 'picksem' record.semesterNo %}">Sem1</a> {% endcomment %}
+    {% comment %} <a href="{% url 'picksem' semesteNo %}">sem3</a>
+    <a href="{% url 'picksem' semesteNo %}">sem4</a>
+    <a href="{% url 'picksem' semesteNo %}">sem5</a>
+    <a href="{% url 'picksem' semesteNo %}">sem2</a>
+    <a href="{% url 'picksem' semesteNo %}">sem6</a>
+    <a href="{% url 'picksem' semesteNo %}">sem7</a>
+    <a href="{% url 'picksem' semesteNo %}">sem8</a> {% endcomment %}
+
+   
+
+    
+
+{% endblock content %}
+{{record.semesterNo}}

@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background: darksalmon;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+
+#form_container {
+    width: 100%;
+    height: 100%;
+
+    background-color: #ffffffa1;
+    box-shadow: 0 0 50px -20px #000;
+    border-radius: 2%;
+
+    overflow: hidden;
+}
+
+#form_header_container {
+    width: 100%;
+    height: 5%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+
+    padding: 20px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+
+    border-bottom: 1px solid transparent;
+    border-image: -webkit-linear-gradient(25deg, #FFBE0B, #FB5607, #FF006E, #8338EC, #3A86FF) 20;
+    background: #000;
+}
+
+#form_header {
+    display: inline-block;
+    font-size: 30px;
+    font-family: Bowlby One SC;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: darksalmon;
+
+
+    
+}
+
+#form_content_container {
+    width: 100%;
+    height: 90%;
+
+    float: left;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 30px;
+}
+
+#form_content_inner_container {
+    width: 75%;
+    height: 100%;
+
+    float: left;
+
+}
+
+input {
+    width: 70%;
+    height: 40px;
+
+    padding: 0 20px;
+    margin: 6px 55px;
+
+    background: #000;
+    font-family: Montserrat;
+    font-weight: 500;
+    color: #fff;
+    font-size: 12px;
+
+    border-bottom: 2px solid transparent;
+    border-top-left-radius: 2%;
+    border-top-right-radius: 2%;
+    border-image: -webkit-linear-gradient(25deg, #FFBE0B, #FB5607, #FF006E, #8338EC, #3A86FF) 1;
+}
+
+#button_container {
+    width: 100%;
+    height: 30%;
+
+    
+    color: #fff;
+
+    float: left;
+
+    margin-top: 5px;
+}
+
+#login_container {
+    width: 100px;
+    height: 40px;
+
+    padding: 10px;
+    margin: 30px;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: 15px;
+}
+
+div {
+    display: block;
+}
+
+#register_container{
+    width: 100px;
+    height: 40px;
+    padding: 10px;
+    margin: 30px;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: 15px;
+}
+
+button {
+    color: darksalmon;
+    background: #000;
+    font-family: Bowlby One SC;
+}
+
+#txterror {
+    margin: 0 auto;
+    width: fit-content;
+    color: red;
+    font-weight: 700;
+    font-family: Bowlby One SC;
+    font-size: 12px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    #content_container {
+        width: 100%;
+        padding: 20px;
+        height: auto;
+    }
+
+    #button_container{
+        display: flex;
+        justify-content: center;
+    }
+
+    #register_container{
+        margin: 20px;
+    }
+
+    #login_container{
+        margin: 20px;
+    }
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    #content_container{
+        width : 70%;
+        height: 95%;
+        margin : 6px 100.5px;
+    }
+
+    #form_content_container {
+        padding-top: 5px;
+    }
+
+    input {
+        margin: 6px 70px;
+    }
+
+    #button_container{
+        display: flex;
+        justify-content: center;
+    }
+
+    #login_container {
+        padding-left: 15px;
+    }
+
+    #register_container {
+        padding-right: 15px;
+    }
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    #content_container {
+        width: 100%;
+        padding: 20px;
+        height: auto;
+    }
+
+    #form_content_container {
+        padding: 5px;
+    }
+
+    #button_container{
+        display: flex;
+        justify-content: center;
+    }
+
+    #register_container{
+        margin: 20px;
+    }
+
+    #login_container{
+        margin: 20px;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    #content_container {
+        width: 60%;
+        height: auto;
+    }
+
+    #button_container{
+        display: flex;
+        justify-content: center;
+    }
+   
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    #content_container {
+        width: 100%;
+        padding: 20px;
+        height: auto;
+    }
+
+    #form_content_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #button_container{
+        display: flex;
+        justify-content: center;
+    }
+
+    #register_container{
+        margin: 20px;
+    }
+
+    #login_container{
+        margin: 20px;
+    }
+
+}

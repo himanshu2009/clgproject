@@ -1,0 +1,26 @@
+{% extends 'enroll/base.html' %}
+
+{% block content %}
+<h4>Update new Subject</h4>
+{% comment %} 'semesterNo','departmentName' {% endcomment %}
+
+<form action="" method="post">
+    {% csrf_token %}
+
+    {{form.as_p}}
+    <input type="submit" class="btn btn-success" value="Update">
+    <a href="{% url 'addandshow' %}" class="bt btn-info">Back</a>
+
+
+
+   
+ </form>
+ <p>choose your department we will show correspongind subjects  </p>
+<a href="{% url 'picksub' 'ComputerScience and Engineering' %}">ComputerScience and Engineering</a>
+<a href="{% url 'picksub' 'Chemical Engineering'  %}">Chemical Engineering</a> 
+<a href="{% url 'picksub' 'nodept' %}">nodpt</a>  
+<a href="{% url 'picksub' 'BCS' %}">BCS</a>  
+
+
+
+{% endblock content %}

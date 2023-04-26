@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Semester-wise Subjects</title>
+  </head>
+  <body>
+    <h1>Semester-wise Subjects</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Semester</th>
+          <th>Subjects</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for semester in semesters %}
+        <tr>
+          <td>{{ semester.name }}</td>
+          <td>{{ semester.subjects|join:', ' }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>

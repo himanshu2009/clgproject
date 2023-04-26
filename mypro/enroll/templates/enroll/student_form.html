@@ -1,0 +1,40 @@
+
+
+{% block content %}
+<h1>Student Form</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    
+    <!-- Basic details -->
+    <div>
+        <label for="{{ form.first_name.id_for_label }}">First Name:</label>
+        {{ form.first_name }}
+    </div>
+    <div>
+        <label for="{{ form.last_name.id_for_label }}">Last Name:</label>
+        {{ form.last_name }}
+    </div>
+    <div>
+        <label for="{{ form.email.id_for_label }}">Email:</label>
+        {{ form.email }}
+    </div>
+    
+    <!-- Academic details -->
+    <div>
+        <label for="{{ form.semester.id_for_label }}">Semester:</label>
+        {{ form.semester }}
+    </div>
+    <div>
+        <label>Subjects:</label>
+        {% for subject in form.subjects %}
+        <div>
+            {{ subject }}
+            <label for="{{ subject.id_for_label }}">{{ subject.choice_label }}</label>
+        </div>
+        {% endfor %}
+    </div>
+    
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

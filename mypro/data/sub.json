@@ -1,0 +1,55 @@
+{
+    "1": [
+      {
+        "code": "ENG101",
+        "name": "English Language and Literature",
+        "credits": 3
+      },
+      {
+        "code": "MATH101",
+        "name": "Calculus and Analytic Geometry",
+        "credits": 4
+      },
+      {
+        "code": "PHYS101",
+        "name": "Physics I",
+        "credits": 3
+      },
+      {
+        "code": "CHEM101",
+        "name": "General Chemistry I",
+        "credits": 3
+      },
+      {
+        "code": "CS101",
+        "name": "Introduction to Computer Science",
+        "credits": 3
+      }
+    ],
+    "2": [
+      {
+        "code": "ENG102",
+        "name": "English Composition and Rhetoric",
+        "credits": 3
+      },
+      {
+        "code": "MATH102",
+        "name": "Differential Equations",
+        "credits": 4
+      },
+      {
+        "code": "PHYS102",
+        "name": "Physics II",
+        "credits": 3
+      },
+      {
+        "code": "CHEM102",
+        "name": "General Chemistry II",
+        "credits": 3
+      }
+
+    ]
+
+}
+      
+  
